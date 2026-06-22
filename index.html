@@ -159,7 +159,13 @@
 <div class="card" onclick="openSection('health')">
 
 <div class="emoji">🏥</div>
+<div class="card" onclick="openSection('health')">
 
+<h2>🏥 Здоровье</h2>
+
+<p>Здоровый образ жизни, болезни, врачи и лечение.</p>
+
+</div>
 <h2>Здоровье</h2>
 
 <p>Врач, болезни, лекарства.</p>
@@ -1080,6 +1086,195 @@ function randomSportQuestion(){
 document.getElementById("sportRandom").innerHTML=
 
 sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
+<section id="health">
+
+<h1>🏥 Здоровье и болезни</h1>
+
+<p>Подготовка к устному экзамену.</p>
+
+<h2>❤️ Здоровый образ жизни</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🥗 правильно питаться</div>
+
+<div class="flashcard">💧 пить много воды</div>
+
+<div class="flashcard">🏃 заниматься спортом</div>
+
+<div class="flashcard">😴 хорошо спать</div>
+
+<div class="flashcard">🚭 не курить</div>
+
+<div class="flashcard">🍎 есть овощи и фрукты</div>
+
+<div class="flashcard">🚶 гулять каждый день</div>
+
+<div class="flashcard">🩺 проходить обследование</div>
+
+</div>
+
+<h2>🤒 Болезни</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🤧 простуда</div>
+
+<div class="flashcard">🤒 грипп</div>
+
+<div class="flashcard">🤕 головная боль</div>
+
+<div class="flashcard">🤢 боль в животе</div>
+
+<div class="flashcard">🤒 температура</div>
+
+<div class="flashcard">😷 кашель</div>
+
+<div class="flashcard">👃 насморк</div>
+
+<div class="flashcard">🤧 ангина</div>
+
+</div>
+
+<h2>👨‍⚕️ Врачи</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">👨‍⚕️ терапевт</div>
+
+<div class="flashcard">🦷 стоматолог</div>
+
+<div class="flashcard">👁 окулист</div>
+
+<div class="flashcard">❤️ кардиолог</div>
+
+<div class="flashcard">🦴 ортопед</div>
+
+<div class="flashcard">👂 ЛОР-врач</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Расскажите, как вы заботитесь о своём здоровье.</b>
+
+<button onclick="showAnswer('health1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="health1">
+
+Я стараюсь правильно питаться.
+Я занимаюсь спортом два раза в неделю.
+Каждый день гуляю.
+Я не курю и стараюсь хорошо спать.
+Если я болею, я иду к врачу.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Что нужно делать, чтобы быть здоровым?</b>
+
+<button onclick="showAnswer('health2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="health2">
+
+Нужно правильно питаться, заниматься спортом, хорошо спать и отдыхать.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие болезни вы знаете?</b>
+
+<button onclick="showAnswer('health3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="health3">
+
+Я знаю простуду, грипп, ангину и воспаление лёгких.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Каких врачей вы знаете?</b>
+
+<button onclick="showAnswer('health4')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="health4">
+
+Я знаю терапевта, стоматолога, окулиста, кардиолога и ортопеда.
+
+</div>
+
+</div>
+
+<button onclick="randomHealthQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="healthRandom">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+}
+  const healthQuestions=[
+
+"Что нужно делать, чтобы быть здоровым?",
+
+"Какие болезни вы знаете?",
+
+"Каких врачей вы знаете?",
+
+"Где можно лечиться?",
+
+"Какие лекарства выписывает врач?"
+
+];
+
+function randomHealthQuestion(){
+
+document.getElementById("healthRandom").innerHTML=
+
+healthQuestions[Math.floor(Math.random()*healthQuestions.length)];
 
 }
 </script>
