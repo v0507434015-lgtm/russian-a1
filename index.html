@@ -1,271 +1,734 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#4facfe,#00c6fb);
-min-height:100vh;
-color:#222;
-}
-
-header{
-padding:35px;
-text-align:center;
-color:white;
-}
-
-header h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-header p{
-font-size:22px;
-opacity:.9;
-}
-
-.container{
-width:95%;
-max-width:1400px;
-margin:auto;
-padding-bottom:50px;
-}
-
-.menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin:40px 0;
-}
-
-.card{
-background:white;
-border-radius:22px;
-padding:30px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h2{
-font-size:30px;
-margin-bottom:15px;
-}
-
-.card p{
-font-size:18px;
-line-height:1.5;
-}
-
-section{
-display:none;
-background:white;
-border-radius:25px;
-padding:35px;
-margin-bottom:30px;
-box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
-
-.active{
-display:block;
-animation:fade .4s;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-h1{
-margin-bottom:20px;
-}
-
-h2{
-margin:25px 0 15px;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
 
-button{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-background:#2196f3;
-color:white;
-border:none;
-padding:14px 24px;
-border-radius:12px;
-cursor:pointer;
-font-size:17px;
-margin-top:15px;
-transition:.3s;
+<title>Russian A1 Exam Trainer</title>
 
-}
+<link rel="stylesheet" href="style.css">
 
-button:hover{
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-background:#0b72c9;
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-}
+</head>
 
-.question{
+<body>
 
-background:#eef7ff;
-padding:20px;
-border-radius:15px;
-margin:20px 0;
+<header>
 
-}
+<h1>🇷🇺 Russian A1 Exam Trainer</h1>
 
-.answer{
+<p>Интерактивная подготовка к экзамену А1</p>
 
-display:none;
-background:#d8ffd9;
-padding:18px;
-margin-top:15px;
-border-radius:12px;
+</header>
 
-}
+<div class="container">
 
-.flashcards{
+<div class="menu">
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-margin-top:25px;
+<div class="card" onclick="openSection('travel')">
 
-}
+<div class="emoji">🏖</div>
 
-.flashcard{
+<h2>Отпуск</h2>
 
-background:#4facfe;
-color:white;
-border-radius:18px;
-padding:25px;
-text-align:center;
-font-weight:bold;
-transition:.3s;
+<p>Путешествия, транспорт, отдых.</p>
 
-}
-
-.flashcard:hover{
-
-background:#00bcd4;
-transform:scale(1.05);
-
-}
-
-.randomQuestion{
-
-font-size:28px;
-font-weight:bold;
-margin-top:25px;
-color:#1565c0;
-
-}
-
-footer{
-
-text-align:center;
-padding:30px;
-color:white;
-
-}
-// ======================
-// НАВИГАЦИЯ
-// ======================
-
-function openSection(id){
-
-document.querySelector(".menu").style.display="none";
-
-document.querySelectorAll("section").forEach(section=>{
-section.classList.remove("active");
-});
-
-document.getElementById(id).classList.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-function goHome(){
-
-document.querySelector(".menu").style.display="grid";
-
-document.querySelectorAll("section").forEach(section=>{
-section.classList.remove("active");
-});
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-// ======================
-// ПОКАЗАТЬ ОТВЕТ
-// ======================
-
-function showAnswer(id){
-
-const answer=document.getElementById(id);
-
-if(answer.style.display==="block"){
-
-answer.style.display="none";
-
-}else{
-
-answer.style.display="block";
-
-}
-
-}
-
-// ======================
-// ЗВУК КНОПОК
-// ======================
-
-document.addEventListener("click",function(e){
-
-if(e.target.tagName==="BUTTON"){
-
-const audio=new Audio("https://actions.google.com/sounds/v1/cartoon/pop.ogg");
-
-audio.volume=0.3;
-
-audio.play();
-
-}
-
-});
 </div>
 
-<script src="script.js"></script>
+<div class="card" onclick="openSection('restaurant')">
 
-</body>
+<div class="emoji">🍽</div>
 
-</html>
+<h2>Ресторан</h2>
+
+<p>Кафе, блюда, продукты.</p>
+
 </div>
 
-<script src="script.js"></script>
+<div class="card" onclick="openSection('cinema')">
 
-</body>
-</html>
+<div class="emoji">🎬</div>
+
+<h2>Кино</h2>
+
+<p>Фильмы, театр, концерт.</p>
+
+</div>
+
+<div class="card" onclick="openSection('sport')">
+
+<div class="emoji">🏃</div>
+
+<h2>Спорт</h2>
+
+<p>Виды спорта и здоровье.</p>
+
+</div>
+
+<div class="card" onclick="openSection('health')">
+
+<div class="emoji">🏥</div>
+
+<h2>Здоровье</h2>
+
+<p>Врач, болезни, лекарства.</p>
+
+</div>
+
+<div class="card" onclick="openSection('hotel')">
+
+<div class="emoji">🏨</div>
+
+<h2>Гостиница</h2>
+
+<p>Номер, услуги, отдых.</p>
+
+</div>
+
+<div class="card" onclick="openSection('dacha')">
+
+<div class="emoji">🌿</div>
+
+<h2>Дача</h2>
+
+<p>Сад, огород, овощи.</p>
+
+</div>
+
+<div class="card" onclick="openSection('exam')">
+
+<div class="emoji">🎓</div>
+
+<h2>Экзамен</h2>
+
+<p>Случайные вопросы.</p>
+
+</div>
+
+</div>
+<section id="travel">
+
+<h1>🏖 Отпуск и путешествия</h1>
+
+<p class="subtitle">Повторите лексику, ответьте на вопросы и подготовьтесь к экзамену.</p>
+
+<h2>📚 Полезные фразы</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🧳 собирать чемодан</div>
+
+<div class="flashcard">✈ лететь самолётом</div>
+
+<div class="flashcard">🚗 ехать на машине</div>
+
+<div class="flashcard">🏨 бронировать гостиницу</div>
+
+<div class="flashcard">🏖 отдыхать на море</div>
+
+<div class="flashcard">🏔 отдыхать в горах</div>
+
+<div class="flashcard">🎫 купить билет</div>
+
+<div class="flashcard">🗺 смотреть карту</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Расскажите о своей последней поездке.</b>
+
+<button onclick="showAnswer('t1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="t1">
+
+Прошлым летом я ездил на море. Мы жили в гостинице семь дней. Каждый день мы гуляли, плавали и отдыхали. Мне очень понравился отпуск.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Куда люди обычно ездят в отпуск?</b>
+
+<button onclick="showAnswer('t2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="t2">
+
+Люди обычно ездят на море, в горы или за границу.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Что нужно взять с собой в отпуск?</b>
+
+<button onclick="showAnswer('t3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="t3">
+
+Паспорт, одежду, деньги, телефон, лекарства и чемодан.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие страны вы хотели бы посетить?</b>
+
+<button onclick="showAnswer('t4')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="t4">
+
+Я хотел(а) бы посетить Италию, Испанию, Францию и Норвегию.
+
+</div>
+
+</div>
+
+<button onclick="randomTravelQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="travelQuestion">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+<section id="restaurant">
+
+<h1>🍽 Ресторан / Кафе</h1>
+
+<p class="subtitle">Повторите лексику и подготовьтесь к устному экзамену.</p>
+
+<h2>📚 Полезные фразы</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🍕 заказать пиццу</div>
+
+<div class="flashcard">🍲 заказать суп</div>
+
+<div class="flashcard">🥗 заказать салат</div>
+
+<div class="flashcard">🍰 заказать десерт</div>
+
+<div class="flashcard">☕ пить кофе</div>
+
+<div class="flashcard">🍵 пить чай</div>
+
+<div class="flashcard">📖 посмотреть меню</div>
+
+<div class="flashcard">💳 оплатить счёт</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Опишите ваш любимый ресторан.</b>
+
+<button onclick="showAnswer('r1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="r1">
+
+Я люблю небольшой ресторан рядом с домом. Там вкусная еда, приятная атмосфера и хорошее обслуживание. Я часто хожу туда с друзьями.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Как часто вы ходите в ресторан?</b>
+
+<button onclick="showAnswer('r2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="r2">
+
+Я хожу в ресторан один или два раза в месяц.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какое ваше любимое блюдо?</b>
+
+<button onclick="showAnswer('r3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="r3">
+
+Моё любимое блюдо — пицца. Я также люблю пасту и салаты.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие польские блюда вы знаете?</b>
+
+<button onclick="showAnswer('r4')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="r4">
+
+Я знаю бигос, журек, пироги, голубцы и котлету по-польски.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие блюда русской кухни вы знаете?</b>
+
+<button onclick="showAnswer('r5')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="r5">
+
+Я знаю борщ, пельмени, блины, щи и окрошку.
+
+</div>
+
+</div>
+
+<button onclick="randomRestaurantQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="restaurantQuestion">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+<section id="cinema">
+
+<h1>🎬 Кино / Театр / Концерт</h1>
+
+<p class="subtitle">
+Повторите лексику и подготовьтесь к устному экзамену.
+</p>
+
+<h2>🎞 Лексика</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🎥 смотреть фильм</div>
+
+<div class="flashcard">🍿 ходить в кино</div>
+
+<div class="flashcard">🎭 ходить в театр</div>
+
+<div class="flashcard">🎤 идти на концерт</div>
+
+<div class="flashcard">🎫 купить билет</div>
+
+<div class="flashcard">😂 комедия</div>
+
+<div class="flashcard">❤️ мелодрама</div>
+
+<div class="flashcard">😱 фильм ужасов</div>
+
+<div class="flashcard">🚀 фантастика</div>
+
+<div class="flashcard">👮 детектив</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Расскажите о своём последнем походе в кино.</b>
+
+<button onclick="showAnswer('c1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="c1">
+
+Недавно я ходил в кино с друзьями.
+Мы смотрели комедию.
+Фильм был очень интересный и смешной.
+После кино мы пошли в кафе.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Какой жанр фильмов вам нравится?</b>
+
+<button onclick="showAnswer('c2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="c2">
+
+Мне нравятся комедии и приключенческие фильмы.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Как часто вы ходите в кино?</b>
+
+<button onclick="showAnswer('c3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="c3">
+
+Я хожу в кино один или два раза в месяц.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>С кем вы обычно ходите в кино?</b>
+
+<button onclick="showAnswer('c4')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="c4">
+
+Я обычно хожу с друзьями или с семьёй.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие фильмы вам нравятся больше всего?</b>
+
+<button onclick="showAnswer('c5')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="c5">
+
+Мне нравятся комедии, боевики и фантастика.
+
+</div>
+
+</div>
+
+<button onclick="randomCinemaQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="cinemaQuestion">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+<section id="sport">
+
+<h1>🏃 Спорт</h1>
+
+<p class="subtitle">
+Повторите лексику, подготовьте монолог и потренируйтесь отвечать на вопросы экзамена.
+</p>
+
+<h2>⚽ Виды спорта</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">⚽ играть в футбол</div>
+
+<div class="flashcard">🏀 играть в баскетбол</div>
+
+<div class="flashcard">🏐 играть в волейбол</div>
+
+<div class="flashcard">🎾 играть в теннис</div>
+
+<div class="flashcard">🏊 плавать</div>
+
+<div class="flashcard">🏃 бегать</div>
+
+<div class="flashcard">🚴 кататься на велосипеде</div>
+
+<div class="flashcard">🛼 кататься на роликах</div>
+
+<div class="flashcard">⛷ кататься на лыжах</div>
+
+<div class="flashcard">🏂 кататься на сноуборде</div>
+
+<div class="flashcard">🏒 играть в хоккей</div>
+
+<div class="flashcard">⛸ кататься на коньках</div>
+
+<div class="flashcard">🏋 ходить в тренажёрный зал</div>
+
+<div class="flashcard">🤸 заниматься гимнастикой</div>
+
+<div class="flashcard">🥋 заниматься дзюдо</div>
+
+<div class="flashcard">🥊 заниматься боксом</div>
+
+</div>
+
+<h2>📍 Где можно заниматься спортом?</h2>
+
+<div class="flashcards">
+
+<div class="flashcard">🏟 на стадионе</div>
+
+<div class="flashcard">🏋 в тренажёрном зале</div>
+
+<div class="flashcard">🏊 в бассейне</div>
+
+<div class="flashcard">🏞 в парке</div>
+
+<div class="flashcard">🏫 в школе</div>
+
+<div class="flashcard">🏕 на природе</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Расскажите, какими видами спорта вы занимаетесь.</b>
+
+<button onclick="showAnswer('sport1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport1">
+
+Я люблю заниматься спортом.
+Два раза в неделю я хожу в тренажёрный зал.
+Летом я катаюсь на велосипеде.
+Зимой иногда катаюсь на лыжах.
+Спорт помогает мне быть здоровым.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Каким видом спорта вы занимаетесь активно?</b>
+
+<button onclick="showAnswer('sport2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport2">
+
+Я активно занимаюсь плаванием и бегом.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какими видами спорта можно заниматься круглый год?</b>
+
+<button onclick="showAnswer('sport3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport3">
+
+Можно плавать, заниматься в тренажёрном зале, играть в теннис и бегать.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие зимние виды спорта вы знаете?</b>
+
+<button onclick="showAnswer('sport4')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport4">
+
+Я знаю лыжи, хоккей, фигурное катание и сноуборд.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Где можно заниматься спортом?</b>
+
+<button onclick="showAnswer('sport5')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport5">
+
+Можно заниматься спортом на стадионе, в бассейне, в тренажёрном зале и в парке.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Что человеку даёт спорт?</b>
+
+<button onclick="showAnswer('sport6')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport6">
+
+Спорт помогает быть здоровым, сильным и чувствовать себя лучше.
+
+</div>
+
+</div>
+
+<button onclick="randomSportQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="sportQuestion">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
