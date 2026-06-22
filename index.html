@@ -1,18 +1,138 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Russian A1 Exam Trainer</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#4facfe,#00c6fb);
+min-height:100vh;
+color:#fff;
+}
+
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:42px;
+}
+
+header p{
+margin-top:10px;
+font-size:20px;
+opacity:.9;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding-bottom:50px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,.25);
+}
+
+.card h2{
+margin:15px 0;
+}
+
+section{
+display:none;
+background:white;
+color:#333;
+padding:35px;
+border-radius:20px;
+margin-top:30px;
+}
+
+.flashcards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;
+margin:25px 0;
+}
+
+.flashcard{
+background:#4facfe;
+color:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+font-weight:bold;
+}
+
+.question{
+background:#eef7ff;
+padding:18px;
+border-radius:15px;
+margin:20px 0;
+}
+
+.answer{
+display:none;
+margin-top:15px;
+background:#d9f6dd;
+padding:15px;
+border-radius:10px;
+}
+
+button{
+background:#4facfe;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+}
+
+button:hover{
+background:#1f8fff;
+}
+
+.randomQuestion{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
 
 </head>
 
@@ -22,7 +142,7 @@
 
 <h1>🇷🇺 Russian A1 Exam Trainer</h1>
 
-<p>Интерактивная подготовка к экзамену А1</p>
+<p>Подготовка к экзамену А1</p>
 
 </header>
 
@@ -30,341 +150,62 @@
 
 <div class="menu">
 
-<div class="card" onclick="openSection('travel')">
-
-<div class="emoji">🏖</div>
-
-<h2>Отпуск</h2>
-
-<p>Путешествия, транспорт, отдых.</p>
-
-</div>
-
 <div class="card" onclick="openSection('restaurant')">
 
-<div class="emoji">🍽</div>
+<h2>🍽 Ресторан</h2>
 
-<h2>Ресторан</h2>
-
-<p>Кафе, блюда, продукты.</p>
+<p>Кафе, блюда и продукты.</p>
 
 </div>
 
 <div class="card" onclick="openSection('cinema')">
 
-<div class="emoji">🎬</div>
+<h2>🎬 Кино</h2>
 
-<h2>Кино</h2>
-
-<p>Фильмы, театр, концерт.</p>
+<p>Фильмы, театр, концерты.</p>
 
 </div>
 
-<h1>🏃 Спорт</h1>
+<div class="card" onclick="openSection('sport')">
+
+<h2>🏃 Спорт</h2>
+
+<p>Виды спорта и соревнования.</p>
+
+</div>
+
+<div class="card" onclick="openSection('health')">
+
+<h2>🏥 Здоровье</h2>
+
+<p>Болезни, врачи и лечение.</p>
+
+</div>
+
+</div>
+
+<section id="restaurant">
+
+<h1>🍽 Ресторан</h1>
 
 <p>Подготовка к устному экзамену.</p>
 
 <div class="flashcards">
 
-<div class="flashcard">⚽ играть в футбол</div>
-<div class="flashcard">🏀 играть в баскетбол</div>
-<div class="flashcard">🏐 играть в волейбол</div>
-<div class="flashcard">🎾 играть в теннис</div>
-<div class="flashcard">🏊 плавать</div>
-<div class="flashcard">🏃 бегать</div>
-<div class="flashcard">🚴 кататься на велосипеде</div>
-<div class="flashcard">🏋️ ходить в тренажёрный зал</div>
-
-</div>
-
-<div class="question">
-
-<b>Каким видом спорта вы занимаетесь?</b>
-
-<button onclick="showAnswer('sport1')">
-Показать пример
-</button>
-
-<div class="answer" id="sport1">
-Я занимаюсь плаванием и иногда хожу в тренажёрный зал.
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какие зимние виды спорта вы знаете?</b>
-
-<button onclick="showAnswer('sport2')">
-Показать пример
-</button>
-
-<div class="answer" id="sport2">
-Я знаю лыжи, сноуборд, хоккей и фигурное катание.
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Что человеку даёт спорт?</b>
-
-<button onclick="showAnswer('sport3')">
-Показать пример
-</button>
-
-<div class="answer" id="sport3">
-Спорт помогает быть здоровым, сильным и активным.
-</div>
-
-</div>
-
-<button onclick="randomSportQuestion()">
-
-🎲 Случайный вопрос
-
-</button>
-
-<div class="randomQuestion" id="sportRandom">
-
-Нажмите кнопку
-
-</div>
-
-<br>
-
-<button onclick="goHome()">
-
-🏠 Главное меню
-
-</button>
-
-</section>
-  <div class="card" onclick="openSection('sport')">
-<h2>🏃 Спорт</h2>
-<p>Виды спорта, соревнования, здоровый образ жизни.</p>
-</div>
-
-<div class="card" onclick="openSection('sport')">
-
-<div class="emoji">🏃</div>
-
-<h2>Спорт</h2>
-
-<p>Виды спорта и здоровье.</p>
-
-</div>
-
-<div class="card" onclick="openSection('health')">
-
-<div class="emoji">🏥</div>
-<div class="card" onclick="openSection('health')">
-
-<h2>🏥 Здоровье</h2>
-
-<p>Здоровый образ жизни, болезни, врачи и лечение.</p>
-
-</div>
-<h2>Здоровье</h2>
-
-<p>Врач, болезни, лекарства.</p>
-
-</div>
-
-<div class="card" onclick="openSection('hotel')">
-
-<div class="emoji">🏨</div>
-
-<h2>Гостиница</h2>
-
-<p>Номер, услуги, отдых.</p>
-
-</div>
-
-<div class="card" onclick="openSection('dacha')">
-
-<div class="emoji">🌿</div>
-
-<h2>Дача</h2>
-
-<p>Сад, огород, овощи.</p>
-
-</div>
-
-<div class="card" onclick="openSection('exam')">
-
-<div class="emoji">🎓</div>
-
-<h2>Экзамен</h2>
-
-<p>Случайные вопросы.</p>
-
-</div>
-
-</div>
-<section id="travel">
-
-<h1>🏖 Отпуск и путешествия</h1>
-
-<p class="subtitle">Повторите лексику, ответьте на вопросы и подготовьтесь к экзамену.</p>
-
-<h2>📚 Полезные фразы</h2>
-
-<div class="flashcards">
-
-<div class="flashcard">🧳 собирать чемодан</div>
-
-<div class="flashcard">✈ лететь самолётом</div>
-
-<div class="flashcard">🚗 ехать на машине</div>
-
-<div class="flashcard">🏨 бронировать гостиницу</div>
-
-<div class="flashcard">🏖 отдыхать на море</div>
-
-<div class="flashcard">🏔 отдыхать в горах</div>
-
-<div class="flashcard">🎫 купить билет</div>
-
-<div class="flashcard">🗺 смотреть карту</div>
-
-</div>
-
-<h2>🎤 Монолог</h2>
-
-<div class="question">
-
-<b>Расскажите о своей последней поездке.</b>
-
-<button onclick="showAnswer('t1')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="t1">
-
-Прошлым летом я ездил на море. Мы жили в гостинице семь дней. Каждый день мы гуляли, плавали и отдыхали. Мне очень понравился отпуск.
-
-</div>
-
-</div>
-
-<h2>❓ Вопросы</h2>
-
-<div class="question">
-
-<b>Куда люди обычно ездят в отпуск?</b>
-
-<button onclick="showAnswer('t2')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="t2">
-
-Люди обычно ездят на море, в горы или за границу.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Что нужно взять с собой в отпуск?</b>
-
-<button onclick="showAnswer('t3')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="t3">
-
-Паспорт, одежду, деньги, телефон, лекарства и чемодан.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какие страны вы хотели бы посетить?</b>
-
-<button onclick="showAnswer('t4')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="t4">
-
-Я хотел(а) бы посетить Италию, Испанию, Францию и Норвегию.
-
-</div>
-
-</div>
-
-<button onclick="randomTravelQuestion()">
-
-🎲 Случайный вопрос
-
-</button>
-
-<div class="randomQuestion" id="travelQuestion">
-
-Нажмите кнопку
-
-</div>
-
-<br>
-
-<button onclick="goHome()">
-
-🏠 Главное меню
-
-</button>
-
-</section>
-<section id="restaurant">
-
-<h1>🍽 Ресторан / Кафе</h1>
-
-<p class="subtitle">Повторите лексику и подготовьтесь к устному экзамену.</p>
-
-<h2>📚 Полезные фразы</h2>
-
-<div class="flashcards">
-
 <div class="flashcard">🍕 заказать пиццу</div>
-
 <div class="flashcard">🍲 заказать суп</div>
-
 <div class="flashcard">🥗 заказать салат</div>
-
-<div class="flashcard">🍰 заказать десерт</div>
-
 <div class="flashcard">☕ пить кофе</div>
-
-<div class="flashcard">🍵 пить чай</div>
-
-<div class="flashcard">📖 посмотреть меню</div>
-
+<div class="flashcard">🍰 заказать десерт</div>
 <div class="flashcard">💳 оплатить счёт</div>
-
-</div>
-
-<h2>🎤 Монолог</h2>
+  <h2>🎤 Монолог</h2>
 
 <div class="question">
 
-<b>Опишите ваш любимый ресторан.</b>
+<b>Опишите любой ресторан или кафе в вашем городе.</b>
 
 <button onclick="showAnswer('r1')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="r1">
@@ -382,9 +223,7 @@
 <b>Как часто вы ходите в ресторан?</b>
 
 <button onclick="showAnswer('r2')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="r2">
@@ -400,9 +239,7 @@
 <b>Какое ваше любимое блюдо?</b>
 
 <button onclick="showAnswer('r3')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="r3">
@@ -415,35 +252,15 @@
 
 <div class="question">
 
-<b>Какие польские блюда вы знаете?</b>
+<b>Какие польские блюда можно заказать в ресторане?</b>
 
 <button onclick="showAnswer('r4')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="r4">
 
-Я знаю бигос, журек, пироги, голубцы и котлету по-польски.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какие блюда русской кухни вы знаете?</b>
-
-<button onclick="showAnswer('r5')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="r5">
-
-Я знаю борщ, пельмени, блины, щи и окрошку.
+Можно заказать бигос, журек, пироги, голубцы и котлету по-польски.
 
 </div>
 
@@ -470,15 +287,12 @@
 </button>
 
 </section>
+
 <section id="cinema">
 
 <h1>🎬 Кино / Театр / Концерт</h1>
 
-<p class="subtitle">
-Повторите лексику и подготовьтесь к устному экзамену.
-</p>
-
-<h2>🎞 Лексика</h2>
+<p>Подготовка к устному экзамену.</p>
 
 <div class="flashcards">
 
@@ -511,17 +325,12 @@
 <b>Расскажите о своём последнем походе в кино.</b>
 
 <button onclick="showAnswer('c1')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="c1">
 
-Недавно я ходил в кино с друзьями.
-Мы смотрели комедию.
-Фильм был очень интересный и смешной.
-После кино мы пошли в кафе.
+Недавно я ходил в кино с друзьями. Мы смотрели комедию. После фильма мы пошли в кафе.
 
 </div>
 
@@ -534,9 +343,7 @@
 <b>Какой жанр фильмов вам нравится?</b>
 
 <button onclick="showAnswer('c2')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="c2">
@@ -552,9 +359,7 @@
 <b>Как часто вы ходите в кино?</b>
 
 <button onclick="showAnswer('c3')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="c3">
@@ -570,32 +375,12 @@
 <b>С кем вы обычно ходите в кино?</b>
 
 <button onclick="showAnswer('c4')">
-
 Показать пример
-
 </button>
 
 <div class="answer" id="c4">
 
-Я обычно хожу с друзьями или с семьёй.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какие фильмы вам нравятся больше всего?</b>
-
-<button onclick="showAnswer('c5')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="c5">
-
-Мне нравятся комедии, боевики и фантастика.
+Я обычно хожу с друзьями или семьёй.
 
 </div>
 
@@ -622,67 +407,24 @@
 </button>
 
 </section>
-<section id="sport">
+  <section id="sport">
 
 <h1>🏃 Спорт</h1>
 
-<p class="subtitle">
-Повторите лексику, подготовьте монолог и потренируйтесь отвечать на вопросы экзамена.
-</p>
-
-<h2>⚽ Виды спорта</h2>
+<p>Подготовка к устному экзамену.</p>
 
 <div class="flashcards">
 
 <div class="flashcard">⚽ играть в футбол</div>
-
 <div class="flashcard">🏀 играть в баскетбол</div>
-
 <div class="flashcard">🏐 играть в волейбол</div>
-
 <div class="flashcard">🎾 играть в теннис</div>
-
 <div class="flashcard">🏊 плавать</div>
-
 <div class="flashcard">🏃 бегать</div>
-
 <div class="flashcard">🚴 кататься на велосипеде</div>
-
-<div class="flashcard">🛼 кататься на роликах</div>
-
+<div class="flashcard">🏋️ ходить в тренажёрный зал</div>
 <div class="flashcard">⛷ кататься на лыжах</div>
-
-<div class="flashcard">🏂 кататься на сноуборде</div>
-
 <div class="flashcard">🏒 играть в хоккей</div>
-
-<div class="flashcard">⛸ кататься на коньках</div>
-
-<div class="flashcard">🏋 ходить в тренажёрный зал</div>
-
-<div class="flashcard">🤸 заниматься гимнастикой</div>
-
-<div class="flashcard">🥋 заниматься дзюдо</div>
-
-<div class="flashcard">🥊 заниматься боксом</div>
-
-</div>
-
-<h2>📍 Где можно заниматься спортом?</h2>
-
-<div class="flashcards">
-
-<div class="flashcard">🏟 на стадионе</div>
-
-<div class="flashcard">🏋 в тренажёрном зале</div>
-
-<div class="flashcard">🏊 в бассейне</div>
-
-<div class="flashcard">🏞 в парке</div>
-
-<div class="flashcard">🏫 в школе</div>
-
-<div class="flashcard">🏕 на природе</div>
 
 </div>
 
@@ -692,19 +434,16 @@
 
 <b>Расскажите, какими видами спорта вы занимаетесь.</b>
 
-<button onclick="showAnswer('sport1')">
-
+<button onclick="showAnswer('s1')">
 Показать пример
-
 </button>
 
-<div class="answer" id="sport1">
+<div class="answer" id="s1">
 
 Я люблю заниматься спортом.
-Два раза в неделю я хожу в тренажёрный зал.
-Летом я катаюсь на велосипеде.
+Я два раза в неделю хожу в тренажёрный зал.
+Летом катаюсь на велосипеде.
 Зимой иногда катаюсь на лыжах.
-Спорт помогает мне быть здоровым.
 
 </div>
 
@@ -716,33 +455,13 @@
 
 <b>Каким видом спорта вы занимаетесь активно?</b>
 
-<button onclick="showAnswer('sport2')">
-
+<button onclick="showAnswer('s2')">
 Показать пример
-
 </button>
 
-<div class="answer" id="sport2">
+<div class="answer" id="s2">
 
-Я активно занимаюсь плаванием и бегом.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какими видами спорта можно заниматься круглый год?</b>
-
-<button onclick="showAnswer('sport3')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="sport3">
-
-Можно плавать, заниматься в тренажёрном зале, играть в теннис и бегать.
+Я активно занимаюсь плаванием.
 
 </div>
 
@@ -752,13 +471,11 @@
 
 <b>Какие зимние виды спорта вы знаете?</b>
 
-<button onclick="showAnswer('sport4')">
-
+<button onclick="showAnswer('s3')">
 Показать пример
-
 </button>
 
-<div class="answer" id="sport4">
+<div class="answer" id="s3">
 
 Я знаю лыжи, хоккей, фигурное катание и сноуборд.
 
@@ -770,15 +487,13 @@
 
 <b>Где можно заниматься спортом?</b>
 
-<button onclick="showAnswer('sport5')">
-
+<button onclick="showAnswer('s4')">
 Показать пример
-
 </button>
 
-<div class="answer" id="sport5">
+<div class="answer" id="s4">
 
-Можно заниматься спортом на стадионе, в бассейне, в тренажёрном зале и в парке.
+Можно заниматься спортом в тренажёрном зале, бассейне, парке или на стадионе.
 
 </div>
 
@@ -788,15 +503,13 @@
 
 <b>Что человеку даёт спорт?</b>
 
-<button onclick="showAnswer('sport6')">
-
+<button onclick="showAnswer('s5')">
 Показать пример
-
 </button>
 
-<div class="answer" id="sport6">
+<div class="answer" id="s5">
 
-Спорт помогает быть здоровым, сильным и чувствовать себя лучше.
+Спорт помогает быть здоровым, сильным и активным.
 
 </div>
 
@@ -823,189 +536,135 @@
 </button>
 
 </section>
-<script>
+  <section id="health">
+
+<h1>🏥 Здоровье</h1>
+
+<p>Подготовка к устному экзамену.</p>
+
+<div class="flashcards">
+
+<div class="flashcard">🥗 правильно питаться</div>
+<div class="flashcard">💧 пить много воды</div>
+<div class="flashcard">🏃 заниматься спортом</div>
+<div class="flashcard">😴 хорошо спать</div>
+<div class="flashcard">🚭 не курить</div>
+<div class="flashcard">🍎 есть овощи и фрукты</div>
+<div class="flashcard">🤒 грипп</div>
+<div class="flashcard">🤧 простуда</div>
+<div class="flashcard">😷 кашель</div>
+<div class="flashcard">🌡 температура</div>
+<div class="flashcard">💊 принимать лекарства</div>
+<div class="flashcard">👨‍⚕️ идти к врачу</div>
+
+</div>
+
+<h2>🎤 Монолог</h2>
+
+<div class="question">
+
+<b>Расскажите, как вы заботитесь о своём здоровье.</b>
+
+<button onclick="showAnswer('h1')">
+Показать пример
+</button>
+
+<div class="answer" id="h1">
+
+Я стараюсь правильно питаться.
+Я занимаюсь спортом два раза в неделю.
+Каждый день гуляю.
+Я хорошо сплю.
+Если я заболеваю, я иду к врачу.
+
+</div>
+
+</div>
+
+<h2>❓ Вопросы</h2>
+
+<div class="question">
+
+<b>Что нужно делать, чтобы быть здоровым?</b>
+
+<button onclick="showAnswer('h2')">
+Показать пример
+</button>
+
+<div class="answer" id="h2">
+
+Нужно правильно питаться, заниматься спортом, хорошо спать и отдыхать.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие болезни вы знаете?</b>
+
+<button onclick="showAnswer('h3')">
+Показать пример
+</button>
+
+<div class="answer" id="h3">
+
+Я знаю простуду, грипп, ангину и воспаление лёгких.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Каких врачей вы знаете?</b>
+
+<button onclick="showAnswer('h4')">
+Показать пример
+</button>
+
+<div class="answer" id="h4">
+
+Я знаю терапевта, стоматолога, окулиста, кардиолога и хирурга.
+
+</div>
+
+</div>
+
+<button onclick="randomHealthQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="healthQuestion">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+  <script>
 
 function openSection(id){
 
 document.querySelector(".menu").style.display="none";
 
-document.querySelectorAll("section").forEach(function(section){
-
-section.style.display="none";
-
+document.querySelectorAll("section").forEach(function(sec){
+sec.style.display="none";
 });
 
 document.getElementById(id).style.display="block";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-function goHome(){
-
-document.querySelector(".menu").style.display="grid";
-
-document.querySelectorAll("section").forEach(function(section){
-
-section.style.display="none";
-
-});
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-function showAnswer(id){
-
-const answer=document.getElementById(id);
-
-if(answer.style.display==="block"){
-
-answer.style.display="none";
-
-}else{
-
-answer.style.display="block";
-
-}
-
-}
-
-// ------------------------
-
-const travelQuestions=[
-"Куда люди обычно ездят в отпуск?",
-"Что нужно взять с собой в отпуск?",
-"Какие страны вы хотели бы посетить?",
-"Где можно отдыхать летом?",
-"Где можно отдыхать зимой?"
-];
-
-function randomTravelQuestion(){
-
-document.getElementById("travelQuestion").innerHTML=
-
-travelQuestions[Math.floor(Math.random()*travelQuestions.length)];
-
-}
-
-// ------------------------
-
-const restaurantQuestions=[
-
-"Как часто вы ходите в ресторан?",
-
-"Какое ваше любимое блюдо?",
-
-"Какие польские блюда вы знаете?",
-
-"Какие блюда русской кухни вы знаете?"
-
-];
-
-function randomRestaurantQuestion(){
-
-document.getElementById("restaurantQuestion").innerHTML=
-
-restaurantQuestions[Math.floor(Math.random()*restaurantQuestions.length)];
-
-}
-
-// ------------------------
-
-const cinemaQuestions=[
-
-"Какой жанр фильмов вам нравится?",
-
-"Как часто вы ходите в кино?",
-
-"С кем вы обычно ходите в кино?",
-
-"Какие фильмы вам нравятся?"
-
-];
-
-function randomCinemaQuestion(){
-
-document.getElementById("cinemaQuestion").innerHTML=
-
-cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
-
-}
-
-// </section>   <!-- конец Кино -->
-
-⬇️⬇️⬇️ СЮДА ВСТАВЛЯЕМ СПОРТ ⬇️⬇️⬇️
-
-<section id="sport">
-
-...
-
-</section>
-
-⬇️⬇️⬇️ ПОТОМ ЗДОРОВЬЕ ⬇️⬇️⬇️
-
-<section id="health">
-
-...
-
-</section>
-
-<script>------------------------
-
-const sportQuestions=[
-
-"Каким видом спорта вы занимаетесь?",
-
-"Какие зимние виды спорта вы знаете?",
-
-"Где можно заниматься спортом?",
-
-"Что человеку даёт спорт?"
-
-];
-
-function randomSportQuestion(){
-
-document.getElementById("sportQuestion").innerHTML=
-
-sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
-
-}
-
-</script>
-...
-</script>
-
-</body>
-</html>
-</div>
-
-<script>
-
-function openSection(id){
-
-document.querySelector(".menu").style.display="none";
-
-document.querySelectorAll("section").forEach(function(sec){
-
-sec.style.display="none";
-
-});
-
-let el=document.getElementById(id);
-
-if(el){
-
-el.style.display="block";
-
-}
+window.scrollTo(0,0);
 
 }
 
@@ -1014,9 +673,7 @@ function goHome(){
 document.querySelector(".menu").style.display="grid";
 
 document.querySelectorAll("section").forEach(function(sec){
-
 sec.style.display="none";
-
 });
 
 window.scrollTo(0,0);
@@ -1039,51 +696,52 @@ el.style.display="block";
 
 }
 
-const travelQuestions=[
-"Куда люди обычно ездят в отпуск?",
-"Что нужно взять с собой в отпуск?",
-"Какие страны вы хотите посетить?",
-"Где можно отдыхать летом?",
-"Где можно отдыхать зимой?"
-];
-
-function randomTravelQuestion(){
-
-document.getElementById("randomTravel").innerHTML=
-
-travelQuestions[Math.floor(Math.random()*travelQuestions.length)];
-
-}
+// ---------------- RESTAURANT ----------------
 
 const restaurantQuestions=[
+
 "Как часто вы ходите в ресторан?",
+
 "Какое ваше любимое блюдо?",
+
 "Какие польские блюда вы знаете?",
+
 "Какие блюда русской кухни вы знаете?"
+
 ];
 
 function randomRestaurantQuestion(){
 
-document.getElementById("restaurantRandom").innerHTML=
+document.getElementById("restaurantQuestion").innerHTML=
 
 restaurantQuestions[Math.floor(Math.random()*restaurantQuestions.length)];
 
 }
 
+// ---------------- CINEMA ----------------
+
 const cinemaQuestions=[
+
 "Какой жанр фильмов вам нравится?",
+
 "Как часто вы ходите в кино?",
+
 "С кем вы обычно ходите в кино?",
+
 "Какие фильмы вам нравятся?"
+
 ];
 
 function randomCinemaQuestion(){
 
-document.getElementById("cinemaRandom").innerHTML=
+document.getElementById("cinemaQuestion").innerHTML=
 
 cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
 
 }
+
+// ---------------- SPORT ----------------
+
 const sportQuestions=[
 
 "Каким видом спорта вы занимаетесь?",
@@ -1100,180 +758,15 @@ const sportQuestions=[
 
 function randomSportQuestion(){
 
-document.getElementById("sportRandom").innerHTML=
+document.getElementById("sportQuestion").innerHTML=
 
 sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
-<section id="health">
 
-<h1>🏥 Здоровье и болезни</h1>
-
-<p>Подготовка к устному экзамену.</p>
-
-<h2>❤️ Здоровый образ жизни</h2>
-
-<div class="flashcards">
-
-<div class="flashcard">🥗 правильно питаться</div>
-
-<div class="flashcard">💧 пить много воды</div>
-
-<div class="flashcard">🏃 заниматься спортом</div>
-
-<div class="flashcard">😴 хорошо спать</div>
-
-<div class="flashcard">🚭 не курить</div>
-
-<div class="flashcard">🍎 есть овощи и фрукты</div>
-
-<div class="flashcard">🚶 гулять каждый день</div>
-
-<div class="flashcard">🩺 проходить обследование</div>
-
-</div>
-
-<h2>🤒 Болезни</h2>
-
-<div class="flashcards">
-
-<div class="flashcard">🤧 простуда</div>
-
-<div class="flashcard">🤒 грипп</div>
-
-<div class="flashcard">🤕 головная боль</div>
-
-<div class="flashcard">🤢 боль в животе</div>
-
-<div class="flashcard">🤒 температура</div>
-
-<div class="flashcard">😷 кашель</div>
-
-<div class="flashcard">👃 насморк</div>
-
-<div class="flashcard">🤧 ангина</div>
-
-</div>
-
-<h2>👨‍⚕️ Врачи</h2>
-
-<div class="flashcards">
-
-<div class="flashcard">👨‍⚕️ терапевт</div>
-
-<div class="flashcard">🦷 стоматолог</div>
-
-<div class="flashcard">👁 окулист</div>
-
-<div class="flashcard">❤️ кардиолог</div>
-
-<div class="flashcard">🦴 ортопед</div>
-
-<div class="flashcard">👂 ЛОР-врач</div>
-
-</div>
-
-<h2>🎤 Монолог</h2>
-
-<div class="question">
-
-<b>Расскажите, как вы заботитесь о своём здоровье.</b>
-
-<button onclick="showAnswer('health1')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="health1">
-
-Я стараюсь правильно питаться.
-Я занимаюсь спортом два раза в неделю.
-Каждый день гуляю.
-Я не курю и стараюсь хорошо спать.
-Если я болею, я иду к врачу.
-
-</div>
-
-</div>
-
-<h2>❓ Вопросы</h2>
-
-<div class="question">
-
-<b>Что нужно делать, чтобы быть здоровым?</b>
-
-<button onclick="showAnswer('health2')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="health2">
-
-Нужно правильно питаться, заниматься спортом, хорошо спать и отдыхать.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Какие болезни вы знаете?</b>
-
-<button onclick="showAnswer('health3')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="health3">
-
-Я знаю простуду, грипп, ангину и воспаление лёгких.
-
-</div>
-
-</div>
-
-<div class="question">
-
-<b>Каких врачей вы знаете?</b>
-
-<button onclick="showAnswer('health4')">
-
-Показать пример
-
-</button>
-
-<div class="answer" id="health4">
-
-Я знаю терапевта, стоматолога, окулиста, кардиолога и ортопеда.
-
-</div>
-
-</div>
-
-<button onclick="randomHealthQuestion()">
-
-🎲 Случайный вопрос
-
-</button>
-
-<div class="randomQuestion" id="healthRandom">
-
-Нажмите кнопку
-
-</div>
-
-<br>
-
-<button onclick="goHome()">
-
-🏠 Главное меню
-
-</button>
-
-</section>
 }
-  const healthQuestions=[
+
+// ---------------- HEALTH ----------------
+
+const healthQuestions=[
 
 "Что нужно делать, чтобы быть здоровым?",
 
@@ -1289,13 +782,16 @@ sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
 
 function randomHealthQuestion(){
 
-document.getElementById("healthRandom").innerHTML=
+document.getElementById("healthQuestion").innerHTML=
 
 healthQuestions[Math.floor(Math.random()*healthQuestions.length)];
 
 }
+
 </script>
 
 </body>
 
 </html>
+
+</div>
