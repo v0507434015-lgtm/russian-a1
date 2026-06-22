@@ -732,3 +732,147 @@
 </button>
 
 </section>
+<script>
+
+function openSection(id){
+
+document.querySelector(".menu").style.display="none";
+
+document.querySelectorAll("section").forEach(function(section){
+
+section.style.display="none";
+
+});
+
+document.getElementById(id).style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function goHome(){
+
+document.querySelector(".menu").style.display="grid";
+
+document.querySelectorAll("section").forEach(function(section){
+
+section.style.display="none";
+
+});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function showAnswer(id){
+
+const answer=document.getElementById(id);
+
+if(answer.style.display==="block"){
+
+answer.style.display="none";
+
+}else{
+
+answer.style.display="block";
+
+}
+
+}
+
+// ------------------------
+
+const travelQuestions=[
+"Куда люди обычно ездят в отпуск?",
+"Что нужно взять с собой в отпуск?",
+"Какие страны вы хотели бы посетить?",
+"Где можно отдыхать летом?",
+"Где можно отдыхать зимой?"
+];
+
+function randomTravelQuestion(){
+
+document.getElementById("travelQuestion").innerHTML=
+
+travelQuestions[Math.floor(Math.random()*travelQuestions.length)];
+
+}
+
+// ------------------------
+
+const restaurantQuestions=[
+
+"Как часто вы ходите в ресторан?",
+
+"Какое ваше любимое блюдо?",
+
+"Какие польские блюда вы знаете?",
+
+"Какие блюда русской кухни вы знаете?"
+
+];
+
+function randomRestaurantQuestion(){
+
+document.getElementById("restaurantQuestion").innerHTML=
+
+restaurantQuestions[Math.floor(Math.random()*restaurantQuestions.length)];
+
+}
+
+// ------------------------
+
+const cinemaQuestions=[
+
+"Какой жанр фильмов вам нравится?",
+
+"Как часто вы ходите в кино?",
+
+"С кем вы обычно ходите в кино?",
+
+"Какие фильмы вам нравятся?"
+
+];
+
+function randomCinemaQuestion(){
+
+document.getElementById("cinemaQuestion").innerHTML=
+
+cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
+
+}
+
+// ------------------------
+
+const sportQuestions=[
+
+"Каким видом спорта вы занимаетесь?",
+
+"Какие зимние виды спорта вы знаете?",
+
+"Где можно заниматься спортом?",
+
+"Что человеку даёт спорт?"
+
+];
+
+function randomSportQuestion(){
+
+document.getElementById("sportQuestion").innerHTML=
+
+sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
+
+}
+
+</script>
+...
+</script>
+
+</body>
+</html>
