@@ -343,3 +343,170 @@ font-size:15px;
 <p>Интерактивная подготовка к экзамену</p>
 
 </header>
+<div class="container">
+
+<div class="menu">
+
+<div class="card" onclick="openSection('travel')">
+<h2>🏖 Отпуск</h2>
+<p>Путешествия, транспорт, отдых, горы.</p>
+</div>
+
+<div class="card" onclick="openSection('restaurant')">
+<h2>🍽 Ресторан</h2>
+<p>Еда, кафе, блюда, приготовление пищи.</p>
+</div>
+
+<div class="card" onclick="openSection('hotel')">
+<h2>🏨 Гостиница</h2>
+<p>Номер, ресепшен, услуги, бронирование.</p>
+</div>
+
+<div class="card" onclick="openSection('cinema')">
+<h2>🎬 Кино</h2>
+<p>Фильмы, театр, концерты.</p>
+</div>
+
+<div class="card" onclick="openSection('dacha')">
+<h2>🌿 Дача</h2>
+<p>Сад, огород, овощи, отдых.</p>
+</div>
+
+<div class="card" onclick="openSection('quiz')">
+<h2>🏆 Экзамен</h2>
+<p>Случайные вопросы и блиц.</p>
+</div>
+
+</div>
+
+<section id="travel">
+
+<h1>🏖 Отпуск и путешествия</h1>
+
+<p>Повторите лексику.</p>
+
+<div class="flashcards">
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+🧳 собирать чемодан
+</div>
+<div class="back">
+Pakować walizkę
+</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+✈ лететь самолётом
+</div>
+<div class="back">
+Lecieć samolotem
+</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+🚗 ехать на машине
+</div>
+<div class="back">
+Jechać samochodem
+</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+🏨 бронировать гостиницу
+</div>
+<div class="back">
+Rezerwować hotel
+</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+🏖 отдыхать на море
+</div>
+<div class="back">
+Odpoczywać nad morzem
+</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">
+🏔 отдыхать в горах
+</div>
+<div class="back">
+Odpoczywać w górach
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Куда люди обычно ездят в отпуск?</b>
+
+<br>
+
+<button onclick="showAnswer('a1')">
+Показать пример
+</button>
+
+<div class="answer" id="a1">
+
+Люди обычно ездят на море, в горы или за границу.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Что нужно взять с собой в отпуск?</b>
+
+<br>
+
+<button onclick="showAnswer('a2')">
+Показать пример
+</button>
+
+<div class="answer" id="a2">
+
+Паспорт, одежду, деньги, телефон, лекарства и чемодан.
+
+</div>
+
+</div>
+
+<button onclick="randomTravelQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="randomTravel">
+
+Нажмите кнопку.
+
+</div>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
