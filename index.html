@@ -183,3 +183,76 @@ padding:30px;
 color:white;
 
 }
+// ======================
+// НАВИГАЦИЯ
+// ======================
+
+function openSection(id){
+
+document.querySelector(".menu").style.display="none";
+
+document.querySelectorAll("section").forEach(section=>{
+section.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function goHome(){
+
+document.querySelector(".menu").style.display="grid";
+
+document.querySelectorAll("section").forEach(section=>{
+section.classList.remove("active");
+});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+// ======================
+// ПОКАЗАТЬ ОТВЕТ
+// ======================
+
+function showAnswer(id){
+
+const answer=document.getElementById(id);
+
+if(answer.style.display==="block"){
+
+answer.style.display="none";
+
+}else{
+
+answer.style.display="block";
+
+}
+
+}
+
+// ======================
+// ЗВУК КНОПОК
+// ======================
+
+document.addEventListener("click",function(e){
+
+if(e.target.tagName==="BUTTON"){
+
+const audio=new Audio("https://actions.google.com/sounds/v1/cartoon/pop.ogg");
+
+audio.volume=0.3;
+
+audio.play();
+
+}
+
+});
