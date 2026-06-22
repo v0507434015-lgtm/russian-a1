@@ -59,6 +59,92 @@
 <p>Фильмы, театр, концерт.</p>
 
 </div>
+<section id="sport">
+
+<h1>🏃 Спорт</h1>
+
+<p>Подготовка к устному экзамену.</p>
+
+<div class="flashcards">
+
+<div class="flashcard">⚽ играть в футбол</div>
+<div class="flashcard">🏀 играть в баскетбол</div>
+<div class="flashcard">🏐 играть в волейбол</div>
+<div class="flashcard">🎾 играть в теннис</div>
+<div class="flashcard">🏊 плавать</div>
+<div class="flashcard">🏃 бегать</div>
+<div class="flashcard">🚴 кататься на велосипеде</div>
+<div class="flashcard">🏋️ ходить в тренажёрный зал</div>
+
+</div>
+
+<div class="question">
+
+<b>Каким видом спорта вы занимаетесь?</b>
+
+<button onclick="showAnswer('sport1')">
+Показать пример
+</button>
+
+<div class="answer" id="sport1">
+Я занимаюсь плаванием и иногда хожу в тренажёрный зал.
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие зимние виды спорта вы знаете?</b>
+
+<button onclick="showAnswer('sport2')">
+Показать пример
+</button>
+
+<div class="answer" id="sport2">
+Я знаю лыжи, сноуборд, хоккей и фигурное катание.
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Что человеку даёт спорт?</b>
+
+<button onclick="showAnswer('sport3')">
+Показать пример
+</button>
+
+<div class="answer" id="sport3">
+Спорт помогает быть здоровым, сильным и активным.
+</div>
+
+</div>
+
+<button onclick="randomSportQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="sportRandom">
+
+Нажмите кнопку
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
+  <div class="card" onclick="openSection('sport')">
+<h2>🏃 Спорт</h2>
+<p>Виды спорта, соревнования, здоровый образ жизни.</p>
+</div>
 
 <div class="card" onclick="openSection('sport')">
 
@@ -975,7 +1061,27 @@ document.getElementById("cinemaRandom").innerHTML=
 cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
 
 }
+const sportQuestions=[
 
+"Каким видом спорта вы занимаетесь?",
+
+"Какие зимние виды спорта вы знаете?",
+
+"Какими видами спорта можно заниматься круглый год?",
+
+"Где можно заниматься спортом?",
+
+"Что человеку даёт спорт?"
+
+];
+
+function randomSportQuestion(){
+
+document.getElementById("sportRandom").innerHTML=
+
+sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
+
+}
 </script>
 
 </body>
