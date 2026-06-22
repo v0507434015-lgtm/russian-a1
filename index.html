@@ -366,7 +366,10 @@ font-size:15px;
 <h2>🎬 Кино</h2>
 <p>Фильмы, театр, концерты.</p>
 </div>
-
+<div class="card" onclick="openSection('sport')">
+<h2>🏃 Спорт</h2>
+<p>Виды спорта, соревнования, здоровый образ жизни.</p>
+</div>
 <div class="card" onclick="openSection('dacha')">
 <h2>🌿 Дача</h2>
 <p>Сад, огород, овощи, отдых.</p>
@@ -964,7 +967,31 @@ const cinemaQuestions=[
 ];
 
 function randomCinemaQuestion(){
+const sportQuestions = [
 
+"Каким видом спорта вы занимаетесь?",
+
+"Какие виды спорта можно заниматься круглый год?",
+
+"Какие зимние виды спорта вы знаете?",
+
+"Где можно заниматься спортом?",
+
+"Как часто вы посещаете бассейн?",
+
+"Что человеку даёт спорт?",
+
+"Когда вы научились кататься на велосипеде?"
+
+];
+
+function randomSportQuestion(){
+
+let q = sportQuestions[Math.floor(Math.random()*sportQuestions.length)];
+
+document.getElementById("sportRandom").innerHTML = q;
+
+}
 document.getElementById("cinemaRandom").innerHTML=
 cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
 
@@ -974,3 +1001,136 @@ cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
 
 </body>
 </html>
+<section id="sport">
+
+<h1>🏃 Спорт</h1>
+
+<p>Подготовка к устному экзамену.</p>
+
+<div class="flashcards">
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">⚽ играть в футбол</div>
+<div class="back">Grać w piłkę nożną</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">🏊 плавать</div>
+<div class="back">Pływać</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">🚴 кататься на велосипеде</div>
+<div class="back">Jeździć na rowerze</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">🏋 ходить в спортзал</div>
+<div class="back">Chodzić na siłownię</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">⛷ кататься на лыжах</div>
+<div class="back">Jeździć na nartach</div>
+</div>
+</div>
+
+<div class="flashcard">
+<div class="flash-inner">
+<div class="front">🏃 бегать</div>
+<div class="back">Biegać</div>
+</div>
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Каким видом спорта вы занимаетесь?</b>
+
+<br><br>
+
+<button onclick="showAnswer('sport1')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport1">
+
+Я занимаюсь плаванием. Иногда хожу в тренажёрный зал и катаюсь на велосипеде.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Какие зимние виды спорта вы знаете?</b>
+
+<br><br>
+
+<button onclick="showAnswer('sport2')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport2">
+
+Я знаю лыжи, сноуборд, хоккей и фигурное катание.
+
+</div>
+
+</div>
+
+<div class="question">
+
+<b>Что человеку даёт спорт?</b>
+
+<br><br>
+
+<button onclick="showAnswer('sport3')">
+
+Показать пример
+
+</button>
+
+<div class="answer" id="sport3">
+
+Спорт помогает быть здоровым, сильным и активным.
+
+</div>
+
+</div>
+
+<button onclick="randomSportQuestion()">
+
+🎲 Случайный вопрос
+
+</button>
+
+<div class="randomQuestion" id="sportRandom">
+
+Нажмите кнопку.
+
+</div>
+
+<br>
+
+<button onclick="goHome()">
+
+🏠 Главное меню
+
+</button>
+
+</section>
