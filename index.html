@@ -873,3 +873,104 @@ document.getElementById("cinemaRandom").innerHTML=q;
 </body>
 
 </html>
+</div>
+
+<script>
+
+function openSection(id){
+
+document.querySelector(".menu").style.display="none";
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.classList.remove("active");
+});
+
+let section=document.getElementById(id);
+
+if(section){
+section.classList.add("active");
+}
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function goHome(){
+
+document.querySelector(".menu").style.display="grid";
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.classList.remove("active");
+});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function showAnswer(id){
+
+let ans=document.getElementById(id);
+
+if(ans.style.display=="block"){
+ans.style.display="none";
+}else{
+ans.style.display="block";
+}
+
+}
+
+const travelQuestions=[
+"Куда люди обычно ездят в отпуск?",
+"Что нужно взять с собой в отпуск?",
+"Какие страны вы хотите посетить?",
+"Где можно отдыхать летом?",
+"Где можно отдыхать зимой?"
+];
+
+function randomTravelQuestion(){
+
+document.getElementById("randomTravel").innerHTML=
+travelQuestions[Math.floor(Math.random()*travelQuestions.length)];
+
+}
+
+const restaurantQuestions=[
+"Как часто вы ходите в рестораны?",
+"Какое ваше любимое блюдо?",
+"Какие польские блюда вы знаете?",
+"Какие блюда русской кухни вы знаете?",
+"Где вы любите обедать?"
+];
+
+function randomRestaurantQuestion(){
+
+document.getElementById("restaurantRandom").innerHTML=
+restaurantQuestions[Math.floor(Math.random()*restaurantQuestions.length)];
+
+}
+
+const cinemaQuestions=[
+"Какой жанр фильмов вам нравится?",
+"Как часто вы ходите в кино?",
+"С кем вы обычно ходите в кино?",
+"Какие фильмы вам нравятся?",
+"Вы любите театр?"
+];
+
+function randomCinemaQuestion(){
+
+document.getElementById("cinemaRandom").innerHTML=
+cinemaQuestions[Math.floor(Math.random()*cinemaQuestions.length)];
+
+}
+
+</script>
+
+</body>
+</html>
